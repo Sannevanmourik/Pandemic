@@ -6,14 +6,18 @@ namespace Pandemic.model
 {
     public class UserRole
     {
-        private string Name { get; set; }
-        private string Description { get; }
+        private string name;
+        private string Description;
 
         public UserRole(string name)
         {
-            Name = name;
+            this.name = name;
         }
 
+        public string Name { get => name; set => name = value; }
+
+
     }
+
 
 }
