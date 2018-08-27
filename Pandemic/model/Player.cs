@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Pandemic.model
+﻿namespace Pandemic.model
 {
     public class Player
     {
-        private String name;
+        private string name;
 
         public Player(string name)
         {
