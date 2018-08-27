@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pandemic.model
 {
-    class Player
+    public class Player
     {
         private String name;
 
