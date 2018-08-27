@@ -31,6 +31,7 @@ namespace Pandemic
             {
                 case 1:
                     Console.WriteLine("\r\nYou chose Medic.");
+                    //setter aanroepen met type user role
                     break;
                 case 2:
                     Console.WriteLine("\r\nYou chose Researcher.");
