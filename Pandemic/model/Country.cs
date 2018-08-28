@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pandemic.model
 {
-    class Country
+    public class Country
     {
         public string Name { get; set; }
         public uint Population { get; set; }

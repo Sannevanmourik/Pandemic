@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pandemic.model
 {
-    enum ColorEnum
+   public enum ColorEnum
     {
         Red,
         Blue,

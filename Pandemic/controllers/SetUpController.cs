@@ -1,22 +1,54 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Pandemic.model;
 using Pandemic.model.countries;
 using Pandemic.model.userRoles;
 
 namespace Pandemic.controllers
 {
-    class SetUpController
+    public class SetUpController
     {
-        //create countries
-        private Country netherlands = new Netherlands("Netherlands", 17_000_000, 0, ColorEnum.Blue);
-        private Country belgium = new Belgium("Belgium", 11_350_000, 0, ColorEnum.Black);
+        public static IList<Country> countries = new List<Country>();
+        
+        /// <summary>
+        /// initilizes all functions described in this class
+        /// </summary>
+        public void StartGame()
+        {
+            AddCountryToCountriesList();
+            string name = AskUserForName();
+            ChooseUserRole(name);
 
-        public Country Netherlands { get => netherlands;}
-        public Country Belgium { get => belgium;}
+        }
 
+                     
+        /// <summary>
+        /// creates a new country and adds it to the countries list
+        /// </summary>
+        /// <returns>countries list</returns>
+        public IList<Country> AddCountryToCountriesList()
+        {
+            countries.Add(new Netherlands("Netherlands", 17_000_000, 3, ColorEnum.Blue));
+            countries.Add(new Belgium("Belgium", 11_350_000, 1, ColorEnum.Black));
+            
+            return countries;
+
+        }
+
+        public static Country GetCountryFromCountries(int index)
+        {
+
+            return countries[index];
+
+        }
+
+        /// <summary>
+        /// asks user for name
+        /// </summary>
+        /// <returns>the name of the user</returns>
         public string AskUserForName()
         {
-            //welcome user and ask for name
             Console.Write("Welcome to Pandemic! \r\nWhat is your name? ");
             var name = Console.ReadLine();
             Console.WriteLine();
@@ -25,7 +57,10 @@ namespace Pandemic.controllers
             return name;
         }
 
-
+        /// <summary>
+        /// gives the user the option to choose a user role
+        /// </summary>
+        /// <param name="name"></param>
         public void ChooseUserRole(string name)
         { 
          
