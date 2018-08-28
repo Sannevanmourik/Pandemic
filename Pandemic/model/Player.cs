@@ -4,7 +4,7 @@ namespace Pandemic.model
 {
     public class Player
     {
-        private string Name { get; set; } //Name moet met hoofdletter
+        private string Name { get; set; } 
         
         
         public Player(string name)
@@ -12,8 +12,6 @@ namespace Pandemic.model
             this.Name = name;
 
         }
-
-       // public string Name { get => Name; set => Name = value; }
 
 
     }
