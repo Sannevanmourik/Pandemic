@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Pandemic.model
 {
-    class ChooseUserRole
+    public class ChooseUserRole
     {
-        public static void chooseUserRole(String name)
+        public static void chooseUserRole(string name)
         {
             Console.Write("Which role would you like to play? ");
             Console.Write("Please choose one from the following list:" +
