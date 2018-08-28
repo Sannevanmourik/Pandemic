@@ -6,7 +6,7 @@ namespace Pandemic.model.countries
 {
     class Belgium : Country
     {
-        public Belgium(string name, long population, int amountOfDiseases, ColorEnum color) : base(name, population, amountOfDiseases, color)
+        public Belgium(string name, uint population, int amountOfDiseases, ColorEnum color) : base(name, population, amountOfDiseases, color)
         {
         }
     }

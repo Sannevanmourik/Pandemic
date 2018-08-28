@@ -7,11 +7,11 @@ namespace Pandemic.model
     class Country
     {
         public string Name { get; set; }
-        public long Population { get; set; }
+        public uint Population { get; set; }
         public int AmountOfDiseases { get; set; }
         public ColorEnum Color { get; set; }
 
-        public Country(string name, long population, int amountOfDiseases, ColorEnum color)
+        public Country(string name, uint population, int amountOfDiseases, ColorEnum color)
         {
             this.Name = name;
             this.Population = population;
