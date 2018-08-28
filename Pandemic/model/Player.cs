@@ -5,7 +5,7 @@ namespace Pandemic.model
     public class Player
     {
         private string Name { get; set; }
-        private Country currentCountry { get; set; }
+        public Country currentCountry { get; set; }
         
         public Player(string name)
         {
@@ -15,7 +15,8 @@ namespace Pandemic.model
 
         public void TreatDesease()
         {
-
+            currentCountry.AmountOfDiseases--;
+            
         }
 
 

@@ -17,6 +17,12 @@ namespace Pandemic
             CountryChoiceController countryChoice = new CountryChoiceController();
             countryChoice.CountryChoice();
 
+            //TODO Sanne move this part to a controller
+            SetUpController.GetChosenPlayer(0).TreatDesease();
+            Console.WriteLine("You decremented the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry);
+            Console.WriteLine("Current ammount of diseases: " + SetUpController.GetChosenPlayer(0).currentCountry.AmountOfDiseases);
+            
+
             Console.ReadKey();
         }
     }

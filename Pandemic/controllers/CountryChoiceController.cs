@@ -34,12 +34,14 @@ namespace Pandemic.controllers
             switch (countryName)
             {
                 case 1:
+                    SetUpController.GetChosenPlayer(0).currentCountry = SetUpController.GetCountryFromCountries(0);
                     Console.WriteLine("\r\nYou are now in the Netherlands.");
                     Console.WriteLine("Population: " + SetUpController.GetCountryFromCountries(0).Population +
                                       "\r\nAmount of diseases: " + SetUpController.GetCountryFromCountries(0).AmountOfDiseases +
                                       "\r\nColor: " + SetUpController.GetCountryFromCountries(0).Color);
                     break;
                 case 2:
+                    SetUpController.GetChosenPlayer(0).currentCountry = SetUpController.GetCountryFromCountries(1);
                     Console.WriteLine("\r\nYou are now in Belgium.");
                     Console.WriteLine("Population: " + SetUpController.GetCountryFromCountries(1).Population +
                                         "\r\nAmount of diseases: " + SetUpController.GetCountryFromCountries(1).AmountOfDiseases +

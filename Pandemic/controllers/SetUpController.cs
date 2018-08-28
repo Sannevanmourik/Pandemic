@@ -10,6 +10,7 @@ namespace Pandemic.controllers
     public class SetUpController
     {
         public static IList<Country> countries = new List<Country>();
+        public static IList<Player> players = new List<Player>();
         
         /// <summary>
         /// initilizes all functions described in this class
@@ -40,8 +41,12 @@ namespace Pandemic.controllers
         {
 
             return countries[index];
-
         }
+
+        public static Player GetChosenPlayer(int index)
+            {
+                return players[index];
+            }
 
         /// <summary>
         /// asks user for name
@@ -61,7 +66,7 @@ namespace Pandemic.controllers
         /// gives the user the option to choose a user role
         /// </summary>
         /// <param name="name"></param>
-        public void ChooseUserRole(string name)
+        public Player ChooseUserRole(string name)
         { 
          
                 Console.Write("Which role would you like to play? ");
@@ -82,36 +87,50 @@ namespace Pandemic.controllers
                     case 1:
                         Console.WriteLine("\r\nYou chose Medic.");
                         Player medic = new MedicPlayer(name);
-                        break;
+                        players.Add(medic);
+                        return medic;
+                        
                     case 2:
                         Console.WriteLine("\r\nYou chose Researcher.");
                         Player researcher = new ResearcherPlayer(name);
-
-                        break;
+                        players.Add(researcher);
+                        return researcher;
+                        
                     case 3:
                         Console.WriteLine("\r\nYou chose Scientist.");
                         Player scientist = new ScientistPlayer(name);
-                        break;
+                        players.Add(scientist);
+                        return scientist;
+
                     case 4:
                         Console.WriteLine("\r\nYou chose Crisis Manager.");
                         Player crisisManager = new CrisisManagerPlayer(name);
-                        break;
+                        players.Add(crisisManager);
+                        return crisisManager;
+
                     case 5:
                         Console.WriteLine("\r\nYou chose Operations Expert.");
                         Player logisticsManager = new LogisticsManagerPlayer(name);
-                        break;
+                        players.Add(logisticsManager);
+                        return logisticsManager;
+
                     case 6:
                         Console.WriteLine("\r\nYou chose Project Manager.");
                         Player projectManager = new ProjectManager(name);
-                        break;
+                        players.Add(projectManager);
+                        return projectManager;
+
                     case 7:
                         Console.WriteLine("\r\nYou chose Quarantine Specialist.");
                         Player quarantineSpecialist = new QuarantineSpecialistPlayer(name);
-                        break;
+                        players.Add(quarantineSpecialist);
+                        return quarantineSpecialist;
 
                     default:
-                        Console.WriteLine("\r\nAn error has occured. Please reboot the game. ");
-                        break;
+                        Console.WriteLine("\r\nYou are a Project Manager. ");
+                        Player defaultPlayer = new ProjectManager(name);
+                        players.Add(defaultPlayer);
+                        return defaultPlayer;
                 }
             }
 
