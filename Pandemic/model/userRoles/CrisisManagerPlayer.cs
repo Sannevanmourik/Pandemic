@@ -6,5 +6,8 @@ namespace Pandemic.model.userRoles
 {
     class CrisisManagerPlayer : Player
     {
+        public CrisisManagerPlayer(string name) : base(name)
+        {
+        }
     }
 }

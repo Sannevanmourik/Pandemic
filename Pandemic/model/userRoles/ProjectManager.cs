@@ -6,5 +6,8 @@ namespace Pandemic.model.userRoles
 {
     class ProjectManager : Player
     {
+        public ProjectManager(string name) : base(name)
+        {
+        }
     }
 }
