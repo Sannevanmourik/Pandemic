@@ -13,7 +13,7 @@ namespace Pandemic.model
 
         }
 
-        public void TreatDesease()
+        public void TreatDisease()
         {
             currentCountry.AmountOfDiseases--;
             
