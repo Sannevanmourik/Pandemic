@@ -9,6 +9,7 @@ namespace Pandemic.controllers
 {
     public class SetUpController
     {
+      
         public static IList<Country> countries = new List<Country>();
         public static IList<Player> players = new List<Player>();
         
@@ -19,6 +20,7 @@ namespace Pandemic.controllers
         {
             try
             {
+
                 AddCountryToCountriesList();
                 string name = AskUserForName();
                 ChooseUserRole(name);
@@ -60,6 +62,8 @@ namespace Pandemic.controllers
         /// asks user for name
         /// </summary>
         /// <returns>the name of the user</returns>
+        /// 
+
         public string AskUserForName()
         {
             Console.Write("Welcome to Pandemic! \r\nWhat is your name? ");

@@ -1,16 +1,19 @@
-﻿using Pandemic.model;
-using System;
-using Pandemic.model.userRoles;
-using Pandemic.model.countries;
+﻿using System;
 using Pandemic.controllers;
 using System.Threading.Tasks;
+
+public delegate void EventHandler();
 
 namespace Pandemic
 {
     class Program
     {
+        public static event EventHandler _show;
+
         public static void Main(string[] args)
         {
+            _show += new EventHandler(WelcomeUser);
+
             MainAsync(args).Wait();
 
             CountryChoiceController countryChoice = new CountryChoiceController();
@@ -20,11 +23,12 @@ namespace Pandemic
             playerAction.ShowAllActions();
 
             Console.ReadKey();
-        }
+        }   
 
         public static async Task<bool> MainAsync(string[] args)
         {
             SetUpController setUpGame = new SetUpController();
+            _show.Invoke();
             Console.WriteLine("Please wait while we load the game...");
             Console.WriteLine();
             await Task.Delay(5000);
@@ -34,6 +38,12 @@ namespace Pandemic
             return await Task.Run(() => startGame);
 
         }
+
+        public static void WelcomeUser()
+        {
+            Console.Write("Welcome! \r\n");
+        }
+
 
     }
 }

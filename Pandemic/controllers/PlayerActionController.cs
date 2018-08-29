@@ -1,5 +1,6 @@
 ﻿using System;
 using Pandemic.controllers;
+using Pandemic.model;
 
 namespace Pandemic.controllers
 {
@@ -11,8 +12,7 @@ namespace Pandemic.controllers
             ActionTreatDisease();
         }
 
-
-        public void ActionTreatDisease()
+       public void ActionTreatDisease()
         {
             //TODO Sanne make sure player only sees currentCountry name instead of pandemic.....
 
