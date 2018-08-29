@@ -15,11 +15,19 @@ namespace Pandemic.controllers
         /// <summary>
         /// initilizes all functions described in this class
         /// </summary>
-        public void StartGame()
+        public bool StartGame()
         {
-            AddCountryToCountriesList();
-            string name = AskUserForName();
-            ChooseUserRole(name);
+            try
+            {
+                AddCountryToCountriesList();
+                string name = AskUserForName();
+                ChooseUserRole(name);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
         }
 

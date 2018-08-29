@@ -3,6 +3,7 @@ using System;
 using Pandemic.model.userRoles;
 using Pandemic.model.countries;
 using Pandemic.controllers;
+using System.Threading.Tasks;
 
 namespace Pandemic
 {
@@ -10,9 +11,7 @@ namespace Pandemic
     {
         public static void Main(string[] args)
         {
-
-            SetUpController setUpGame = new SetUpController();
-            setUpGame.StartGame();
+            MainAsync(args).Wait();
 
             CountryChoiceController countryChoice = new CountryChoiceController();
             countryChoice.CountryChoice();
@@ -22,6 +21,19 @@ namespace Pandemic
 
             Console.ReadKey();
         }
+
+        public static async Task<bool> MainAsync(string[] args)
+        {
+            SetUpController setUpGame = new SetUpController();
+            var startGame = setUpGame.StartGame();
+            Task.Delay(5000000);
+
+            return await Task.Run(() => startGame);
+
+        }
+
     }
 }
+
+
 
