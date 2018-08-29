@@ -29,7 +29,6 @@ namespace Pandemic
         {
             SetUpController setUpGame = new SetUpController();
             _show.Invoke();
-            Console.WriteLine("Please wait while we load the game...");
             Console.WriteLine();
             await Task.Delay(5000);
 
@@ -41,7 +40,8 @@ namespace Pandemic
 
         public static void WelcomeUser()
         {
-            Console.Write("Welcome! \r\n");
+            Console.Write("Welcome! \r\nPlease wait while we load the game...\r\n");
+
         }
 
 

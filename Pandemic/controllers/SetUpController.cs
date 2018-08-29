@@ -40,7 +40,7 @@ namespace Pandemic.controllers
         /// <returns>countries list</returns>
         public IList<Country> AddCountryToCountriesList()
         {
-            countries.Add(new Netherlands("Netherlands", 17_000_000, 3, ColorEnum.Blue));
+            countries.Add(new Netherlands("The Netherlands", 17_000_000, 3, ColorEnum.Blue));
             countries.Add(new Belgium("Belgium", 11_350_000, 1, ColorEnum.Black));
             
             return countries;

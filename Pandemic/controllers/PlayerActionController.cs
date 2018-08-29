@@ -22,23 +22,23 @@ namespace Pandemic.controllers
             {
                 case "Yes":
                     SetUpController.GetChosenPlayer(0).TreatDisease();
-                    Console.WriteLine("You decremented the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry);
+                    Console.WriteLine("You decremented the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry.Name);
                     Console.WriteLine("Current ammount of diseases: " + SetUpController.GetChosenPlayer(0).currentCountry.AmountOfDiseases);
                     break;
 
                 case "yes":
                     SetUpController.GetChosenPlayer(0).TreatDisease();
-                    Console.WriteLine("You decremented the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry);
+                    Console.WriteLine("You decremented the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry.Name);
                     Console.WriteLine("Current ammount of diseases: " + SetUpController.GetChosenPlayer(0).currentCountry.AmountOfDiseases);
                     break;
 
                 case "No":
-                    Console.WriteLine("You didn't decrement the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry);
+                    Console.WriteLine("You didn't decrement the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry.Name);
                     Console.WriteLine("Current ammount of diseases: " + SetUpController.GetChosenPlayer(0).currentCountry.AmountOfDiseases);
                     break;
 
                 case "no":
-                    Console.WriteLine("You didn't decrement the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry);
+                    Console.WriteLine("You didn't decrement the amount of diseases in " + SetUpController.GetChosenPlayer(0).currentCountry.Name);
                     Console.WriteLine("Current ammount of diseases: " + SetUpController.GetChosenPlayer(0).currentCountry.AmountOfDiseases);
                     break;
 

@@ -11,7 +11,7 @@ namespace Pandemic.controllers
         public void CountryChoice()
         {
             var countryName = AskUserCountryChoice();
-
+            ShowCountryDetailsOfChosenCountry(countryName);
         }
 
 
