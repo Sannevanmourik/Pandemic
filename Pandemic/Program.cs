@@ -17,8 +17,8 @@ namespace Pandemic
             CountryChoiceController countryChoice = new CountryChoiceController();
             countryChoice.CountryChoice();
 
-          //  PlayerActionController playerAction = new PlayerActionController();
-          //  playerAction.ShowAllActions();
+            PlayerActionController playerAction = new PlayerActionController();
+            playerAction.ShowAllActions();
 
             Console.ReadKey();
         }
