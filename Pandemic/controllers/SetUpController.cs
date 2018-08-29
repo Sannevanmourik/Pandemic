@@ -66,11 +66,13 @@ namespace Pandemic.controllers
 
         public string AskUserForName()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write("Welcome to Pandemic! \r\nWhat is your name? ");
             var name = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine("Hi, " + name + " nice to meet you!");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Black;
             return name;
         }
 
@@ -79,9 +81,10 @@ namespace Pandemic.controllers
         /// </summary>
         /// <param name="name"></param>
         public Player ChooseUserRole(string name)
-        { 
-         
-                Console.Write("Which role would you like to play? ");
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+
+            Console.Write("Which role would you like to play? ");
                 Console.Write("Please choose one from the following list:" +
                     "\r\n 1. Medic" +
                     "\r\n 2. Researcher" +
@@ -97,54 +100,56 @@ namespace Pandemic.controllers
                 switch (userRole)
                 {
                     case 1:
-                        Console.WriteLine("\r\nYou chose Medic.");
+                        Console.WriteLine("\r\nYou chose Medic.\r\n");
                         Player medic = new MedicPlayer(name);
                         players.Add(medic);
                         return medic;
                         
                     case 2:
-                        Console.WriteLine("\r\nYou chose Researcher.");
+                        Console.WriteLine("\r\nYou chose Researcher.\r\n");
                         Player researcher = new ResearcherPlayer(name);
                         players.Add(researcher);
                         return researcher;
                         
                     case 3:
-                        Console.WriteLine("\r\nYou chose Scientist.");
+                        Console.WriteLine("\r\nYou chose Scientist.\r\n");
                         Player scientist = new ScientistPlayer(name);
                         players.Add(scientist);
                         return scientist;
 
                     case 4:
-                        Console.WriteLine("\r\nYou chose Crisis Manager.");
+                        Console.WriteLine("\r\nYou chose Crisis Manager.\r\n");
                         Player crisisManager = new CrisisManagerPlayer(name);
                         players.Add(crisisManager);
                         return crisisManager;
 
                     case 5:
-                        Console.WriteLine("\r\nYou chose Operations Expert.");
+                        Console.WriteLine("\r\nYou chose Operations Expert.\r\n");
                         Player logisticsManager = new LogisticsManagerPlayer(name);
                         players.Add(logisticsManager);
                         return logisticsManager;
 
                     case 6:
-                        Console.WriteLine("\r\nYou chose Project Manager.");
+                        Console.WriteLine("\r\nYou chose Project Manager.\r\n");
                         Player projectManager = new ProjectManager(name);
                         players.Add(projectManager);
                         return projectManager;
 
                     case 7:
-                        Console.WriteLine("\r\nYou chose Quarantine Specialist.");
+                        Console.WriteLine("\r\nYou chose Quarantine Specialist.\r\n");
                         Player quarantineSpecialist = new QuarantineSpecialistPlayer(name);
                         players.Add(quarantineSpecialist);
                         return quarantineSpecialist;
 
                     default:
-                        Console.WriteLine("\r\nYou are a Project Manager. ");
+                        Console.WriteLine("\r\nYou are a Project Manager. \r\n");
                         Player defaultPlayer = new ProjectManager(name);
                         players.Add(defaultPlayer);
                         return defaultPlayer;
                 }
-            }
+            Console.ForegroundColor = ConsoleColor.Black;
 
         }
+
+    }
 }

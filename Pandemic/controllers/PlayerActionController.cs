@@ -15,6 +15,7 @@ namespace Pandemic.controllers
        public void ActionTreatDisease()
         {
             //TODO Sanne make sure player only sees currentCountry name instead of pandemic.....
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Console.WriteLine("Dear user, would you like to decrement the disease by 1? Yes or No? ");
             var choice = Console.ReadLine();
@@ -47,6 +48,9 @@ namespace Pandemic.controllers
 
 
             }
+
+            Console.ForegroundColor = ConsoleColor.Black;
+
         }
     }
 
