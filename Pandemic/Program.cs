@@ -25,8 +25,11 @@ namespace Pandemic
         public static async Task<bool> MainAsync(string[] args)
         {
             SetUpController setUpGame = new SetUpController();
+            Console.WriteLine("Please wait while we load the game...");
+            Console.WriteLine();
+            await Task.Delay(5000);
+
             var startGame = setUpGame.StartGame();
-            Task.Delay(5000000);
 
             return await Task.Run(() => startGame);
 
